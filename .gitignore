@@ -3,3 +3,6 @@
 ################################################################################
 
 /.vs
+/Underwater/bin/Debug/netcoreapp2.1
+/Underwater/obj
+/Underwater/Properties

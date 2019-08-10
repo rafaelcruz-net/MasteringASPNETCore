@@ -9,6 +9,7 @@ namespace Underwater.Models
     public class Aquarium
     {
         
+        [Key]
         public int AquariumId { get; set; }
 
         public string Name { get; set; }

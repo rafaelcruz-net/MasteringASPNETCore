@@ -10,6 +10,7 @@ namespace Underwater.Models
 {
     public class Fish
     {
+        [Key]
         public int FishId { get; set; }
 
         [Display(Name = "Fish Name:")]

@@ -59,15 +59,29 @@ namespace Underwater.Repositories
             return aquariumsQuery;
         }
 
+        public IEnumerable<Aquarium> GetAquarium()
+        {
+            return _context.Aquariums.ToList();
+        }
+
+        public object GetAquarium(int id)
+        {
+            return _context.Aquariums.Include(a => a.Fishes)
+                 .SingleOrDefault(f => f.AquariumId == id);
+        }
     }
 
     public interface IUnderwaterRepository
     {
         IEnumerable<Fish> Getfishes();
+
+        IEnumerable<Aquarium> GetAquarium();
+
         Fish GetFishById(int id);
         void AddFish(Fish fish);
         void RemoveFish(int id);
         void SaveChanges();
         IQueryable<Aquarium> PopulateAquariumsDropDownList();
+        object GetAquarium(int id);
     }
 }

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Underwater.Middlewares;
 
 namespace Underwater
 {
@@ -28,8 +29,6 @@ namespace Underwater
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -42,6 +41,7 @@ namespace Underwater
             }
 
             app.UseStaticFiles();
+            app.LogRequest();
           
 
             app.UseMvc(routes =>

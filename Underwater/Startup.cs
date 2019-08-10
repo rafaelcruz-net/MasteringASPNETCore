@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Underwater.Data;
 using Underwater.Middlewares;
+using Underwater.Repositories;
 
 namespace Underwater
 {
@@ -24,7 +25,8 @@ namespace Underwater
 
         public void ConfigureServices(IServiceCollection services)
         {
-           
+            services.AddScoped<IUnderwaterRepository, UnderwaterRepository>();
+
             services.AddDbContext<UnderwaterContext>(options =>
              options.UseSqlServer(
                  _configuration.GetConnectionString("DefaultConnection")));

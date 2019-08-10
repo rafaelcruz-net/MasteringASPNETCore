@@ -26,7 +26,7 @@ namespace Underwater.Data
                    AquariumId = 1,
                    Name = "Fish Aquarium",
                    Address = "4121  Broadway Street",
-                   Number = 818 - 392 - 0763,
+                   Number = "818 - 392 - 0763",
                    Open = true,
                },
                new Aquarium
@@ -34,7 +34,7 @@ namespace Underwater.Data
                    AquariumId = 2,
                    Name = "Ocean Aquarium",
                    Address = "3219  Central Avenue",
-                   Number = 310 - 643 - 0965,
+                   Number = "310 - 643 - 0965",
                    Open = false,
                },
                new Aquarium
@@ -42,7 +42,7 @@ namespace Underwater.Data
                    AquariumId = 3,
                    Name = "Best Aquarium",
                    Address = "128  Stewart Street",
-                   Number = 336 - 209 - 6822,
+                   Number = "336 - 209 - 6822",
                    Open = true,
                }
                );

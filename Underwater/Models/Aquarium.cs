@@ -16,7 +16,7 @@ namespace Underwater.Models
 
         public string Address { get; set; }
 
-        public int Number { get; set; }
+        public string Number { get; set; }
 
         public bool Open { get; set; }
 

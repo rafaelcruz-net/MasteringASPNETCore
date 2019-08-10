@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Underwater.Filters;
+using Underwater.Models;
 
 namespace Underwater.Controllers
 {
@@ -31,6 +32,17 @@ namespace Underwater.Controllers
         public IActionResult Create()
         {
             return View();
+        }
+
+
+        [HttpPost]
+        public IActionResult Create(Fish model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            return View();
+
         }
     }
 }

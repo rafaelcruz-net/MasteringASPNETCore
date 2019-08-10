@@ -27,6 +27,11 @@ namespace Underwater.Controllers
         [LogActionFilter]
         public IActionResult Index()
         {
+            if (!this.User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "UserAccount");
+            }
+
             return View(this.Repository.Getfishes());
         }
 

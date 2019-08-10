@@ -22,8 +22,14 @@
                     <a class="nav-link" href="@Url.Action("Index", "Aquarium")">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Create", "Aquarium")">Add Fish</a>
+                    <a class="nav-link" href="@Url.Action("Create", "AquariumCode")">Add Fish</a>
                 </li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li class="nav-item" style="float:right">
+                        <a class="nav-link " href="@Url.Action("Logout", "UserAccount")"> Logout</a>
+                    </li>
+                }
             </ul>
         </div>
     </nav>

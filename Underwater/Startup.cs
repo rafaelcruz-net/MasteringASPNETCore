@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Underwater.Data;
 using Underwater.Middlewares;
+using Underwater.Models;
 using Underwater.Repositories;
 
 namespace Underwater
@@ -31,6 +32,19 @@ namespace Underwater
              options.UseSqlServer(
                  _configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddDbContext<UserDbContext>(options =>
+            options.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDefaultIdentity<UserAccount>(options =>
+            {
+                options.Password.RequireDigit = true;
+                options.Password.RequiredLength = 7;
+                options.Password.RequireUppercase = true;
+
+                options.User.RequireUniqueEmail = true;
+            })
+          .AddEntityFrameworkStores<UserDbContext>();
+
 
             services.AddMvc();
         }
@@ -48,8 +62,11 @@ namespace Underwater
                 app.UseHsts();
             }
 
+            
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.LogRequest();
+            app.UseAuthentication();
           
 
             app.UseMvc(routes =>

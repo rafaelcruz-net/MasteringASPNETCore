@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Underwater.Filters;
 
 namespace Underwater.Controllers
 {
@@ -20,7 +21,14 @@ namespace Underwater.Controllers
           
         }
 
+        [LogActionFilter]
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        [LogActionFilter]
+        public IActionResult Create()
         {
             return View();
         }

@@ -8,7 +8,7 @@
     <h3 class="title">Are you sure you want to delete this?</h3>
     <div class="photo-index-card-details">
         <h3 class="display-picture-title">
-            @Html.DisplayFor(modelItem => modelItem.Name)
+            @Html.DisplayFor(modelItem => modelItem.Name, new { @class="red" })
         </h3>
         @if (Model.ImageName != null)
         {

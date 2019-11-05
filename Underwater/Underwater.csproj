@@ -13,7 +13,7 @@
     <None Include="wwwroot\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
     <None Include="wwwroot\bootstrap\dist\css\bootstrap.css.map" />
     <None Include="wwwroot\bootstrap\dist\css\bootstrap.min.css.map" />
-    <None Include="wwwroot\bootstrap\dist\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\bootstrap\dist\js\bootstrap.bundle.js" />  
     <None Include="wwwroot\bootstrap\dist\js\bootstrap.bundle.js.map" />
     <None Include="wwwroot\bootstrap\dist\js\bootstrap.bundle.min.js" />
     <None Include="wwwroot\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
